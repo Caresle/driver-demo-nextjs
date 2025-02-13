@@ -33,19 +33,12 @@ export const TutorProvider = ({
 	const steps = useRef<CustomDriveStep[]>([])
 
 	const addStep = (step: CustomDriveStep) => {
-		console.group("add step")
-		console.log(step)
-		console.groupEnd()
-
 		if (steps.current.find(s => s.element === step.element)) return
 		steps.current.push(step)
 		steps.current.sort((a, b) => a.order - b.order)
 	}
 
 	const removeStep = (step: CustomDriveStep) => {
-		console.group("remove step")
-		console.log(step)
-		console.groupEnd()
 		steps.current = steps.current.filter(s => s.element !== step.element)
 	}
 
